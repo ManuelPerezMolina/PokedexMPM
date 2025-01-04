@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textcontraseña">PASSWORD</string>
+    <string name="contraseña">ENTER YOUR PASSWORD</string>
+    <string name="registro">SIGN UP</string>
+    <string name="email">ENTER YOUR EMAIL</string>
+    <string name="acceder">LOG IN</string>
+    <string name="listaPokemon">LIST OF POKEMON</string>
+    <string name="listaPokedex">" LIST OF ALL POKEMON"</string>
+</resources>

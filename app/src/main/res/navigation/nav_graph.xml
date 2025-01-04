@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_sample.xml"
+    app:startDestination="@id/pokemonCapturados2">
+    <fragment
+        android:id="@+id/pokemonCapturados2"
+        android:name="dam.pmdm.tarea3.fragment.PokemonCapturados"
+        android:label="fragment_pokemon_capturados"
+        tools:layout="@layout/fragment_pokemon_capturados" >
+        <action
+            android:id="@+id/action_pokemonCapturados2_to_pokedex"
+            app:destination="@id/pokedex" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokedex"
+        android:name="dam.pmdm.tarea3.fragment.Pokedex"
+        android:label="fragment_pokedex"
+        tools:layout="@layout/fragment_pokedex" >
+        <action
+            android:id="@+id/action_pokedex_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/setting"
+        android:name="dam.pmdm.tarea3.fragment.Setting"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_setting_to_pokemonCapturados2"
+            app:destination="@id/pokemonCapturados2" />
+    </fragment>
+</navigation>
