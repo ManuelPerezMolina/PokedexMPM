@@ -26,7 +26,8 @@
             android:id="@+id/todosLosPokemons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true" />
+            android:clickable="true"
+            android:clipChildren="true"/>
 
     </LinearLayout>
 

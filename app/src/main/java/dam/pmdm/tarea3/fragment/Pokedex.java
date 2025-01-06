@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,6 +55,7 @@ public class Pokedex extends Fragment {
         List<PokemonData> lp = showPokemon(listaPokedex);
         adapter = new PokemonAdapter(lp,getContext());
         tlp.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
        return vista;
     }
@@ -79,12 +82,16 @@ public class Pokedex extends Fragment {
                     Log.e(TAG, " onResponse: " + response.errorBody());
                 }
             }
-
             @Override
             public void onFailure(Call<PokemonRetrofit> call, Throwable throwable) {
-
             }
         });
         return  listaPokedex;
+    }
+
+    public static void pokemonClicked(PokemonData currentPokemon, View view) {
+
+
+
     }
 }
