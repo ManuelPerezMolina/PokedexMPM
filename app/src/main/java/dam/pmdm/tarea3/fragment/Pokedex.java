@@ -12,9 +12,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import dam.pmdm.tarea3.R;
+import dam.pmdm.tarea3.bd.CompletarDatos;
+import dam.pmdm.tarea3.bd.PokemonBd;
 import dam.pmdm.tarea3.io.PokemonInterface;
 import dam.pmdm.tarea3.io.PokemonRetrofit;
 import dam.pmdm.tarea3.rv.PokemonAdapter;
@@ -31,9 +38,8 @@ public class Pokedex extends Fragment {
     private RecyclerView tlp;
     private PokemonAdapter adapter;
     private Context context;
-    private static final String TAG = "POKEDEX";
+    public static final String TAG = "POKEDEX";
     private PokemonInterface pokemonApi;
-    List<PokemonData> listaPokedex;
 
 
 
@@ -51,7 +57,7 @@ public class Pokedex extends Fragment {
 
         tlp= (RecyclerView) vista.findViewById(R.id.todosLosPokemons);
         tlp.setLayoutManager(new LinearLayoutManager(context));
-        listaPokedex = new ArrayList<PokemonData>();
+        List<PokemonData> listaPokedex = new ArrayList<PokemonData>();
         List<PokemonData> lp = showPokemon(listaPokedex);
         adapter = new PokemonAdapter(lp,getContext());
         tlp.setAdapter(adapter);
@@ -89,9 +95,11 @@ public class Pokedex extends Fragment {
         return  listaPokedex;
     }
 
+
     public static void pokemonClicked(PokemonData currentPokemon, View view) {
 
-
-
+        Toast.makeText(view.getContext(), "Pokemon: " + currentPokemon.getName(), Toast.LENGTH_SHORT).show();
+        PokemonBd pokemon = new PokemonBd(currentPokemon.getNumero(), currentPokemon.getName(), currentPokemon.getUrl());
+        CompletarDatos c = new CompletarDatos(currentPokemon.getNumero());
     }
 }

@@ -73,6 +73,7 @@ public class loginActivity extends AppCompatActivity {
             gotoActivityPrincipal();
         }
         else starSignUp();
+        Toast.makeText(this,"Fallo",Toast.LENGTH_SHORT).show();
     }
 
     private void gotoActivityPrincipal() {

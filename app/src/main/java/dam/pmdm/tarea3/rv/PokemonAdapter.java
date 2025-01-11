@@ -56,6 +56,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
                 Pokedex.pokemonClicked(items.get(position), v);
             }
         });
+
     }
 
     @Override
@@ -72,7 +73,6 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
             super(itemView);
             imagen = itemView.findViewById(R.id.pcimagenview);
             nombre = itemView.findViewById(R.id.pctextview);
-            tipo = itemView.findViewById(R.id.pctextview2);
         }
     }
 }

@@ -1,17 +1,15 @@
 package dam.pmdm.tarea3;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 import dam.pmdm.tarea3.fragment.Pokedex;
 import dam.pmdm.tarea3.fragment.PokemonCapturados;
@@ -20,6 +18,8 @@ import dam.pmdm.tarea3.fragment.Setting;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
+    private FirebaseFirestoreSettings mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.pokemonCapturados);
-    }
+}
 
 
     public boolean onNavigationItemSelected(MenuItem item) {

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Imagenpequeña">
-        <item name="android:layout_width">60dp</item>
-        <item name="android:layout_height">60dp</item>
-        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:scaleType">fitXY</item>
     </style>
 
-    <style name="LetraMediana" parent="TextAppearance.AppCompat">
+    <style name="LetraGrande" parent="TextAppearance.AppCompat">
         <item name="android:textColor">#48F321</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">40sp</item>
         <item name="android:textAlignment">center</item>
     </style>
 </resources>

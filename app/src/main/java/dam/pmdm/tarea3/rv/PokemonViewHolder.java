@@ -20,7 +20,6 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder{
     public void bind(PokemonData datapokemon){
 
         binding.pctextview.setText(datapokemon.getName());
-        binding.pctextview2.setText(datapokemon.getUrl());
         Glide.with(binding.getRoot());
     }
 }
