@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +22,9 @@ import dam.pmdm.tarea3.MainActivity;
 import dam.pmdm.tarea3.R;
 
 public class loginActivity extends AppCompatActivity {
+
+    public loginActivity() {
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,12 +47,7 @@ public class loginActivity extends AppCompatActivity {
 
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
             new FirebaseAuthUIActivityResultContract(),
-            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-                @Override
-                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    onSignInResult(result);
-                }
-            }
+            this::onSignInResult
     );
 
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
@@ -73,7 +70,6 @@ public class loginActivity extends AppCompatActivity {
             gotoActivityPrincipal();
         }
         else starSignUp();
-        Toast.makeText(this,"Fallo",Toast.LENGTH_SHORT).show();
     }
 
     private void gotoActivityPrincipal() {

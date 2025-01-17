@@ -1,5 +1,7 @@
 package dam.pmdm.tarea3.fragment;
 
+import static dam.pmdm.tarea3.Global.setFragment;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,17 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.ObservableBoolean;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.firestore.CollectionReference;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import dam.pmdm.tarea3.Global;
 import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.bd.CompletarDatos;
 import dam.pmdm.tarea3.bd.PokemonBd;
@@ -40,13 +50,13 @@ public class Pokedex extends Fragment {
     private Context context;
     public static final String TAG = "POKEDEX";
     private PokemonInterface pokemonApi;
-
+    private ArrayList pokemonCapturados;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setFragment(this);
     }
 
     @Override
@@ -61,7 +71,6 @@ public class Pokedex extends Fragment {
         List<PokemonData> lp = showPokemon(listaPokedex);
         adapter = new PokemonAdapter(lp,getContext());
         tlp.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
        return vista;
     }
@@ -74,7 +83,7 @@ public class Pokedex extends Fragment {
                 .build();
         pokemonApi = retrofit.create(PokemonInterface.class);
 
-        Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(150,0);
+        Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(10,0);
         pokemonRetrofitCall.enqueue(new Callback<PokemonRetrofit>() {
 
             @Override
