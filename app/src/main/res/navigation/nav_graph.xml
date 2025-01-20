@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_pokemonCapturados2_to_pokedex"
             app:destination="@id/pokedex" />
+        <action
+            android:id="@+id/action_pokemonCapturados2_to_detalles2"
+            app:destination="@id/detalles" />
     </fragment>
     <fragment
         android:id="@+id/pokedex"
@@ -29,6 +32,15 @@
         tools:layout="@layout/fragment_setting" >
         <action
             android:id="@+id/action_setting_to_pokemonCapturados2"
+            app:destination="@id/pokemonCapturados2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalles"
+        android:name="dam.pmdm.tarea3.fragment.Detalles"
+        android:label="fragment_detalles"
+        tools:layout="@layout/fragment_detalles" >
+        <action
+            android:id="@+id/action_detalles_to_pokemonCapturados2"
             app:destination="@id/pokemonCapturados2" />
     </fragment>
 </navigation>

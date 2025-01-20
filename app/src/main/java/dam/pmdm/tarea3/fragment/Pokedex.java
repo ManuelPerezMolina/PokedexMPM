@@ -10,25 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.databinding.ObservableBoolean;
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import dam.pmdm.tarea3.Global;
 import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.bd.CompletarDatos;
 import dam.pmdm.tarea3.bd.PokemonBd;
@@ -62,9 +52,18 @@ public class Pokedex extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                ((androidx.fragment.app.FragmentManager) fragmentManager).beginTransaction()
+                        .replace(R.id.my_nav_host_fragment, PokemonCapturados.class, null)
+                        .commit();
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
 
         View vista = inflater.inflate(R.layout.fragment_pokedex, container, false);
-
         tlp= (RecyclerView) vista.findViewById(R.id.todosLosPokemons);
         tlp.setLayoutManager(new LinearLayoutManager(context));
         List<PokemonData> listaPokedex = new ArrayList<PokemonData>();

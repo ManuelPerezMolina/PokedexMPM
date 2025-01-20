@@ -7,4 +7,11 @@
     <string name="acceder">LOG IN</string>
     <string name="listaPokemon">LIST OF POKEMON</string>
     <string name="listaPokedex">" LIST OF ALL POKEMON"</string>
+    <string name="CerrarSesion">Log out</string>
+    <string name="eliminar_pokemon">Delete Pokemon</string>
+    <string name="opcion_eliminar">You must activate the delete pokemon option in Settings</string>
+    <string name="idioma_aplicacion">Choose the language of the application</string>
+    <string name="altura">Height:</string>
+    <string name="peso">Weight:</string>
+    <string name="Tipos">Types</string>
 </resources>

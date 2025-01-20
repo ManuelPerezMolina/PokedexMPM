@@ -3,5 +3,17 @@
     <string name="default_web_client_id" translatable="false">webClientId.apps.googleusercontent.com</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="listaPokemon">LISTADO DE POKEMON</string>
-    <string name="listaPokedex">LISTADO TODOS LOS POKEMON</string>-
+    <string name="listaPokedex">LISTADO TODOS LOS POKEMON</string>
+    <string name="CerrarSesion">Cerrar Sesión</string>
+    <string name="eliminar_pokemon">Eliminar Pokemon</string>-
+    <string name="textcontraseña">Contraseña</string>
+    <string name="contraseña">Introducca su Contraseña</string>
+    <string name="registro">Registrarse</string>
+    <string name="email">Introducca su Email</string>
+    <string name="acceder">Acceder</string>
+    <string name="opcion_eliminar">Debe activar la opción eliminar pokemon en Setting</string>
+    <string name="idioma_aplicacion">Elige el Idioma de la aplicación</string>
+    <string name="altura">Altura:</string>
+    <string name="peso">Peso:</string>
+    <string name="Tipos">Tipos</string>
 </resources>

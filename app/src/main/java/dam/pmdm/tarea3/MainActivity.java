@@ -1,26 +1,15 @@
 package dam.pmdm.tarea3;
 
-import static dam.pmdm.tarea3.fragment.Pokedex.TAG;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.util.ArrayList;
 
 import dam.pmdm.tarea3.fragment.Pokedex;
 import dam.pmdm.tarea3.fragment.PokemonCapturados;
@@ -30,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     BottomNavigationView bottomNavigationView;
     private FirebaseFirestoreSettings mDatabase;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
