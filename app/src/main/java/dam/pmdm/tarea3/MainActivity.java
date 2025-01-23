@@ -1,5 +1,6 @@
 package dam.pmdm.tarea3;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -11,6 +12,8 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
+import java.util.Locale;
+
 import dam.pmdm.tarea3.fragment.Pokedex;
 import dam.pmdm.tarea3.fragment.PokemonCapturados;
 import dam.pmdm.tarea3.fragment.Setting;
@@ -18,7 +21,7 @@ import dam.pmdm.tarea3.fragment.Setting;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
-    private FirebaseFirestoreSettings mDatabase;
+    private String idioma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +30,22 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         setContentView(R.layout.activity_main);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.pokemonCapturados);
+        idioma=getSharedPreferences("idioma", 0).getString("idioma", "es");
+        if (idioma.equals("es")) {
+            Locale loc = new Locale("es");
+            Locale.setDefault(loc);
+            Configuration config = new Configuration();
+            config.setLocale(loc);
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        }else{
+            Locale loc = new Locale("en");
+            Locale.setDefault(loc);
+            Configuration config = new Configuration();
+            config.setLocale(loc);
+            getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        }
 
 }
 

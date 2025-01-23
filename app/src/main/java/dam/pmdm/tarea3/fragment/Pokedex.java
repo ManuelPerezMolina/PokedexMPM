@@ -1,13 +1,17 @@
 package dam.pmdm.tarea3.fragment;
 
+import static java.util.Collections.list;
+import static dam.pmdm.tarea3.Global.fragment;
 import static dam.pmdm.tarea3.Global.setFragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -19,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import dam.pmdm.tarea3.Global;
 import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.bd.CompletarDatos;
 import dam.pmdm.tarea3.bd.PokemonBd;
@@ -40,8 +45,8 @@ public class Pokedex extends Fragment {
     private Context context;
     public static final String TAG = "POKEDEX";
     private PokemonInterface pokemonApi;
-    private ArrayList pokemonCapturados;
-
+    List<PokemonData> listaPokedex = new ArrayList<>();
+    private boolean cargado =false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,23 +61,34 @@ public class Pokedex extends Fragment {
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                ((androidx.fragment.app.FragmentManager) fragmentManager).beginTransaction()
+                fragmentManager.beginTransaction()
                         .replace(R.id.my_nav_host_fragment, PokemonCapturados.class, null)
                         .commit();
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
-
         View vista = inflater.inflate(R.layout.fragment_pokedex, container, false);
-        tlp= (RecyclerView) vista.findViewById(R.id.todosLosPokemons);
+//        tlp= vista.findViewById(R.id.todosLosPokemons);
+//        tlp.setLayoutManager(new LinearLayoutManager(context));
+//        List<PokemonData> lp = showPokemon(listaPokedex);
+//        adapter = new PokemonAdapter(lp,getContext());
+//        tlp.setAdapter(adapter);
+
+       return vista;
+    }
+
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.context = context;
+        tlp= getView().findViewById(R.id.todosLosPokemons);
         tlp.setLayoutManager(new LinearLayoutManager(context));
-        List<PokemonData> listaPokedex = new ArrayList<PokemonData>();
         List<PokemonData> lp = showPokemon(listaPokedex);
         adapter = new PokemonAdapter(lp,getContext());
         tlp.setAdapter(adapter);
 
-       return vista;
     }
+
+
 
     public List<PokemonData> showPokemon(List<PokemonData> listaPokedex) {
 
@@ -82,8 +98,8 @@ public class Pokedex extends Fragment {
                 .build();
         pokemonApi = retrofit.create(PokemonInterface.class);
 
-        Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(10,0);
-        pokemonRetrofitCall.enqueue(new Callback<PokemonRetrofit>() {
+        Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(20,0);
+        pokemonRetrofitCall.enqueue(new Callback<>() {
 
             @Override
             public void onResponse(Call<PokemonRetrofit> call, Response<PokemonRetrofit> response) {
@@ -96,6 +112,7 @@ public class Pokedex extends Fragment {
                     Log.e(TAG, " onResponse: " + response.errorBody());
                 }
             }
+
             @Override
             public void onFailure(Call<PokemonRetrofit> call, Throwable throwable) {
             }
@@ -107,7 +124,6 @@ public class Pokedex extends Fragment {
     public static void pokemonClicked(PokemonData currentPokemon, View view) {
 
         Toast.makeText(view.getContext(), "Pokemon: " + currentPokemon.getName(), Toast.LENGTH_SHORT).show();
-        PokemonBd pokemon = new PokemonBd(currentPokemon.getNumero(), currentPokemon.getName(), currentPokemon.getUrl());
         CompletarDatos c = new CompletarDatos(currentPokemon.getNumero());
     }
 }

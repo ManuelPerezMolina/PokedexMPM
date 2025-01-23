@@ -4,13 +4,13 @@
     <item
         android:title="Pokemon capturados"
         android:id="@+id/pokemonCapturados"/>
-<!--        android:onClick="onNavigationItemSelected"/>-->
+
 
     <item android:title="Pokedex"
         android:id="@+id/pokedex"/>
-<!--        android:onClick="onNavigationItemSelected"/>-->
+
 
     <item android:title="Setting"
         android:id="@+id/setting"/>
-<!--        android:onClick="onNavigationItemSelected"/>-->
+
 </menu>

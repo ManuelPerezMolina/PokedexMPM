@@ -1,6 +1,7 @@
 package dam.pmdm.tarea3.rv;
 
 import static android.app.PendingIntent.getActivity;
+import static android.view.View.VISIBLE;
 import static com.google.android.play.integrity.internal.al.b;
 import static dam.pmdm.tarea3.Global.fragment;
 
@@ -33,7 +34,7 @@ import dam.pmdm.tarea3.fragment.PokemonCapturados;
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHolder> {
 
-     private ArrayList<String> pokemoCapturados;
+    private ArrayList<String> pokemoCapturados;
     private List<PokemonData> items;
     private Context context;
 
@@ -49,7 +50,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokemon_cardview, parent, false);
-       pokemoCapturados = Global.getPokemonCapturados();
+
 
        return new ViewHolder(view);
     }
@@ -58,9 +59,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
+        pokemoCapturados = Global.getPokemonCapturados();
+        holder.setIsRecyclable(false);
         PokemonData p = items.get(position);
         holder.nombre.setText(p.getName());
-        System.out.println("Numero: " + p.getNumero());
         Glide.with(context)
                 .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + p.getNumero() + ".png")
                 .centerCrop()
@@ -69,36 +71,35 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
        if (pokemoCapturados != null & (fragment instanceof Pokedex)){
            if (pokemoCapturados.contains(p.getNumero())) {
-               holder.itemView.findViewById(R.id.pcCapturado).setVisibility(View.VISIBLE);
+               holder.itemView.findViewById(R.id.pcCapturado).setVisibility(VISIBLE);
                holder.itemView.findViewById(R.id.pccardview).setActivated(false);
-               holder.itemView.findViewById(R.id.pclinearlayout).setBackground(null);
-               holder.itemView.findViewById(R.id.pclinearlayout).setBackgroundColor(R.color.azul);
+               holder.itemView.findViewById(R.id.pccardview).setBackgroundColor(R.color.azul);
            } else {
                holder.itemView.findViewById(R.id.pcCapturado).setVisibility(View.INVISIBLE);
                holder.itemView.findViewById(R.id.pccardview).setActivated(true);
-               holder.itemView.findViewById(R.id.pccardview).setBackground(null);
                holder.itemView.findViewById(R.id.pclinearlayout).setBackgroundColor(R.color.rojo);
            }
        }
 
-       holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if ((fragment instanceof Pokedex)) {
-                    Pokedex.pokemonClicked(items.get(position), v);
-                    v.setBackgroundColor(R.color.rojo);
-                    v.setClickable(false);
-                    v.findViewById(R.id.pcCapturado).setVisibility(View.VISIBLE);
-                } else if (fragment instanceof PokemonCapturados) {
-                    Toast.makeText(v.getContext(), "Pokemon: " + items.get(position).getName(), Toast.LENGTH_SHORT).show();
-                    Global.setPokemonSeleccionado(items.get(position));
-                    MainActivity mainActivity = (MainActivity) v.getContext();
-                    FragmentTransaction ft = mainActivity.getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.my_nav_host_fragment, Detalles.class, null);
-                    ft.commit();
-                }
-            }
-        });
+       holder.itemView.setOnClickListener(v -> {
+           if ((fragment instanceof Pokedex)) {
+               if (holder.itemView.findViewById(R.id.pcCapturado).getVisibility() != VISIBLE){
+                   Pokedex.pokemonClicked(items.get(position), v);
+                   v.setBackgroundColor(R.color.rojo);
+                   v.setClickable(false);
+                   v.findViewById(R.id.pcCapturado).setVisibility(VISIBLE);
+               } else {
+                   Toast.makeText(v.getContext(), R.string.ya_capturado, Toast.LENGTH_SHORT).show();
+               }
+           } else if (fragment instanceof PokemonCapturados) {
+               Toast.makeText(v.getContext(), "Pokemon: " + items.get(position).getName(), Toast.LENGTH_SHORT).show();
+               Global.setPokemonSeleccionado(items.get(position));
+               MainActivity mainActivity = (MainActivity) v.getContext();
+               FragmentTransaction ft = mainActivity.getSupportFragmentManager().beginTransaction();
+               ft.replace(R.id.my_nav_host_fragment, Detalles.class, null);
+               ft.commit();
+           }
+       });
     }
 
 

@@ -30,6 +30,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import dam.pmdm.tarea3.Global;
 import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.bd.CompletarDatos;
 import dam.pmdm.tarea3.rv.PokemonAdapter;
@@ -60,7 +61,6 @@ public class PokemonCapturados extends Fragment {
         tlp= (RecyclerView) vista.findViewById(R.id.amRvpersonajes);
         tlp.setLayoutManager(new LinearLayoutManager(context));
         List<PokemonData> lp = showPokemonCapturados(listaPokedex);
-        setPokemonCapturados("");
         adapter = new PokemonAdapter(lp,getContext());
         tlp.setAdapter(adapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itc);
@@ -89,7 +89,7 @@ public class PokemonCapturados extends Fragment {
                                     Object dato2 = document.getData().get("name");
                                     Object dato3 = "/" + dato1;
                                     listaPokedex.add(new PokemonData(dato1.toString(), dato2.toString(), dato3.toString()));
-                                    setPokemonCapturados(dato1.toString());
+                                    setPokemonCapturados(dato1.toString(),false);
                                     adapter.notifyDataSetChanged();
                                 }
                             }
@@ -122,6 +122,7 @@ public class PokemonCapturados extends Fragment {
             SharedPreferences prefe = getActivity().getSharedPreferences("eliminar", 0);
             if (prefe.getBoolean("eliminar",false)) {
                 CompletarDatos c = new CompletarDatos(listaPokedex.get(position).getNumero());
+                setPokemonCapturados(listaPokedex.get(position).getNumero(),true);
                 listaPokedex.remove(position);
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -130,6 +131,7 @@ public class PokemonCapturados extends Fragment {
                 builder.setPositiveButton("Aceptar", null);
                 builder.show();
             }
+
 
         }
     };

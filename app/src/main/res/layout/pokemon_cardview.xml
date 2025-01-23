@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
         app:cardElevation="6dp"
-        app:cardBackgroundColor="@color/azul"
         app:cardUseCompatPadding="true"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        app:cardBackgroundColor="@color/azul">
 
         <LinearLayout
             android:id="@+id/pclinearlayout"
@@ -50,7 +50,7 @@
                     android:id="@+id/pcCapturado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CAPTURADO"
+                    android:text="@string/capturado"
                     android:gravity="right"
                     android:visibility="gone"
                     android:textColor="@color/rojo"/>

@@ -16,4 +16,8 @@
     <string name="altura">Altura:</string>
     <string name="peso">Peso:</string>
     <string name="Tipos">Tipos</string>
+    <string name="ya_capturado">Este pokemon ya está capturado</string>
+    <string name="capturado">CAPTURADO</string>
+    <string name="idioma_ingles">ENGLISH</string>
+    <string name="idioma_castellano">SPANISH</string>
 </resources>
