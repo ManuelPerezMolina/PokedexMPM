@@ -1,8 +1,6 @@
 package dam.pmdm.tarea3.rv;
 
-import static android.app.PendingIntent.getActivity;
 import static android.view.View.VISIBLE;
-import static com.google.android.play.integrity.internal.al.b;
 import static dam.pmdm.tarea3.Global.fragment;
 
 import android.annotation.SuppressLint;
@@ -15,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 

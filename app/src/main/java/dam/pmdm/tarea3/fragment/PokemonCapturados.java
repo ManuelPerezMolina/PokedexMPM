@@ -3,7 +3,6 @@ package dam.pmdm.tarea3.fragment;
 import static dam.pmdm.tarea3.Global.setFragment;
 import static dam.pmdm.tarea3.Global.setPokemonCapturados;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,7 +14,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,7 +28,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-import dam.pmdm.tarea3.Global;
 import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.bd.CompletarDatos;
 import dam.pmdm.tarea3.rv.PokemonAdapter;

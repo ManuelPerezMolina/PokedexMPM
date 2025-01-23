@@ -1,17 +1,13 @@
 package dam.pmdm.tarea3.fragment;
 
-import static java.util.Collections.list;
-import static dam.pmdm.tarea3.Global.fragment;
 import static dam.pmdm.tarea3.Global.setFragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -23,10 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import dam.pmdm.tarea3.Global;
 import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.bd.CompletarDatos;
-import dam.pmdm.tarea3.bd.PokemonBd;
 import dam.pmdm.tarea3.io.PokemonInterface;
 import dam.pmdm.tarea3.io.PokemonRetrofit;
 import dam.pmdm.tarea3.rv.PokemonAdapter;
