@@ -62,11 +62,6 @@ public class Pokedex extends Fragment {
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
         View vista = inflater.inflate(R.layout.fragment_pokedex, container, false);
-//        tlp= vista.findViewById(R.id.todosLosPokemons);
-//        tlp.setLayoutManager(new LinearLayoutManager(context));
-//        List<PokemonData> lp = showPokemon(listaPokedex);
-//        adapter = new PokemonAdapter(lp,getContext());
-//        tlp.setAdapter(adapter);
 
        return vista;
     }
@@ -79,10 +74,7 @@ public class Pokedex extends Fragment {
         List<PokemonData> lp = showPokemon(listaPokedex);
         adapter = new PokemonAdapter(lp,getContext());
         tlp.setAdapter(adapter);
-
     }
-
-
 
     public List<PokemonData> showPokemon(List<PokemonData> listaPokedex) {
 

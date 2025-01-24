@@ -20,4 +20,12 @@
     <string name="capturado">CAPTURADO</string>
     <string name="idioma_ingles">ENGLISH</string>
     <string name="idioma_castellano">SPANISH</string>
+    <string name="acercade">Acerca de ...</string>
+    <string name="elegir_opcion">Seguro que desea eliminar este pokemon</string>
+    <string name="opcion_title">Eliminar Pokemon</string>
+    <string name="borrar">Borrar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar" translatable="false">Cancelar</string>
+    <string name="msg_acercade" translatable="false">MANUEL PEREZ MOLINA\nV. 1.0</string>
+    <string name="msg_CerrarSesion">Seguro que quiere cerrar la sesion</string>
 </resources>

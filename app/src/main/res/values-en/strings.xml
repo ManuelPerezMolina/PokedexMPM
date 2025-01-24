@@ -18,4 +18,11 @@
     <string name="capturado">CAUGHT</string>
     <string name="idioma_ingles">INGLES</string>
     <string name="idioma_castellano">ESPAÑOL</string>
+    <string name="acercade">About ...</string>
+    <string name="elegir_opcion">Surely you want to eliminate this pokemon</string>
+    <string name="opcion_title">Remove Pokemon</string>
+    <string name="aceptar">Accept</string>
+    <string name="borrar">Delete</string>
+    <string name="cancelar">Cancel</string>
+    <string name="msg_CerrarSesion">You probably want to log out.</string>
 </resources>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
@@ -12,33 +20,38 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_alignParentRight="false"
-        android:gravity="center"
+        android:gravity="left"
         android:text="@string/eliminar_pokemon"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/Tidioma"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/acercade"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/acercade"
+        android:gravity="left"
+        android:textSize="30dp"
         android:layout_below="@+id/eliPok"
-        android:layout_marginTop="140dp"
-        android:background="@color/rojo"
-        android:text="@string/idioma_aplicacion"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="10dp"/>
+
+
 
     <LinearLayout
         android:id="@+id/llayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Tidioma"
-        android:layout_marginTop="15dp"
+        android:layout_below="@+id/acercade"
         android:clickable="true"
         android:orientation="vertical"
-        android:padding="50dp">
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idioma_aplicacion"
+            android:textSize="25dp"/>
 
         <Button
             android:id="@+id/English"
@@ -60,10 +73,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Closed"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/Tidioma"
-        android:layout_marginStart="65dp"
+        android:layout_alignTop="@id/llayout"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="64dp"
         android:fontFamily="cursive"
@@ -74,5 +87,7 @@
         tools:layout_editor_absoluteY="555dp" />
 
 </RelativeLayout>
+
+</ScrollView>
 
 

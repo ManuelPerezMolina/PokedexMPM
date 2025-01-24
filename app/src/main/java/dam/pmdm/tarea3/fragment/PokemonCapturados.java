@@ -5,6 +5,7 @@ import static dam.pmdm.tarea3.Global.setPokemonCapturados;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,8 +43,6 @@ public class PokemonCapturados extends Fragment {
     public static final String TAG = "POKEDEX";
     List<PokemonData> listaPokedex = new ArrayList<PokemonData>();
     private FirebaseAuth auth;
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,9 +117,18 @@ public class PokemonCapturados extends Fragment {
             adapter.notifyDataSetChanged();
             SharedPreferences prefe = getActivity().getSharedPreferences("eliminar", 0);
             if (prefe.getBoolean("eliminar",false)) {
-                CompletarDatos c = new CompletarDatos(listaPokedex.get(position).getNumero());
-                setPokemonCapturados(listaPokedex.get(position).getNumero(),true);
-                listaPokedex.remove(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(R.string.elegir_opcion)
+                        .setTitle(R.string.opcion_title);
+                builder.setPositiveButton(R.string.borrar, (dialog, id) -> {
+                    CompletarDatos c = new CompletarDatos(listaPokedex.get(position).getNumero());
+                    setPokemonCapturados(listaPokedex.get(position).getNumero(),true);
+                    listaPokedex.remove(position);
+                    adapter.notifyDataSetChanged();
+                });
+                builder.setNegativeButton(R.string.cancelar, null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("Eliminar pokemon");
