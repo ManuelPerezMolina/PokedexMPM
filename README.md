@@ -61,7 +61,10 @@ Y por último tenemos la tecla para cerrar sesión.
 
 + [Firebase Authentication](https://firebase.google.com/docs/auth?hl=es-419)
 + [Cloud Firestore](https://firebase.google.com/docs/firestore?hl=es-419)
-+ 
++ [Retrofit](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=es-419#0)
++ [JsonArray, JsonObjects](https://developer.android.com/reference/org/json/JSONObject)
++ [Glide](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library)
++ [Fragment](https://developer.android.com/guide/fragments/create?hl=es-419)
 
 
 
