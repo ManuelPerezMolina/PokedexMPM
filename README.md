@@ -60,6 +60,8 @@ Y por último tenemos la tecla para cerrar sesión.
 # TECNOLOGIAS UTILIZADAS
 
 + [Firebase Authentication](https://firebase.google.com/docs/auth?hl=es-419)
++ [Cloud Firestore](https://firebase.google.com/docs/firestore?hl=es-419)
++ 
 
 
 
