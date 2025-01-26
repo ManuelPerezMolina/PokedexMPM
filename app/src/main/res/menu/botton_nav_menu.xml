@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Pokemon capturados"
+        android:title="@string/Pokemon_capturados"
         android:id="@+id/pokemonCapturados"/>
 
 
-    <item android:title="Pokedex"
+    <item android:title="@string/Pokedex"
         android:id="@+id/pokedex"/>
 
 
-    <item android:title="Setting"
+    <item android:title="@string/Ajustes"
         android:id="@+id/setting"/>
 
 </menu>

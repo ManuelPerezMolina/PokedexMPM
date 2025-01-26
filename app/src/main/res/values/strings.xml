@@ -28,4 +28,7 @@
     <string name="cancelar" translatable="false">Cancelar</string>
     <string name="msg_acercade" translatable="false">MANUEL PEREZ MOLINA\nV. 1.0</string>
     <string name="msg_CerrarSesion">Seguro que quiere cerrar la sesion</string>
+    <string name="Pokemon_capturados">Pokemon Capturados</string>
+    <string name="Pokedex" translatable="false">Pokedex</string>
+    <string name="Ajustes">Ajustes</string>
 </resources>

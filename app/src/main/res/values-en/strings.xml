@@ -25,4 +25,7 @@
     <string name="borrar">Delete</string>
     <string name="cancelar">Cancel</string>
     <string name="msg_CerrarSesion">You probably want to log out.</string>
+    <string name="Pokemon_capturados">Captured Pokemon</string>
+    <string name="Pokedex">Pokedex</string>
+    <string name="Ajustes">Setting</string>
 </resources>

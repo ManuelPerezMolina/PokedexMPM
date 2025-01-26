@@ -5,7 +5,6 @@ import static dam.pmdm.tarea3.Global.setPokemonCapturados;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;

@@ -84,7 +84,7 @@ public class Pokedex extends Fragment {
                 .build();
         pokemonApi = retrofit.create(PokemonInterface.class);
 
-        Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(20,0);
+        Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(150,0);
         pokemonRetrofitCall.enqueue(new Callback<>() {
 
             @Override
