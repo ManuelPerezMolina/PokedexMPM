@@ -1,6 +1,6 @@
 # PokedexMPM
 
-![Pokemon logo]( https://live.staticflickr.com/4027/4584901866_fcf25b6f4b_b.jpg)
+<img src="https://live.staticflickr.com/4027/4584901866_fcf25b6f4b_b.jpg" alt="Pokemon logo" width="500" height="300">
 
 **PokedexMPM** es una aplicación para el seguimiento y control de los pokemon capturados.
 ***
@@ -25,19 +25,27 @@ Como requisito para la utilización de **PokedexMPM** se solicita la identificac
 <a id="capturados"></a>
 ## Pantalla inicial, **Pokémon Capturados**
 Tras iniciar sesión con nuestro usuario se nos presentara la pantalla de **Pokémon capturados**, en ésta podemos ver todos los Pokémon que hemos capturado, y que hemos indicado en la Pantalla [**Pokedex**](#pokedex). Si realizamos un click en cualquier Pokémon se nos abrirá la pantalla de [**Detalles**](#detalles). Si deslizamos cualquier pokemon hacia cualquier lado, se eliminará, siempre que lo hayamos indicado en [**Setting**](#setting).
-![pantalla incial, pokemon capturados](
+
+<img src="Imagenes/login.png" alt="pantalla inicial, pokemon capturados" width="100" height="200">
  <a id="detalles"></a>
 ### Detalles
-Pantalla donde se nos muestra información detallada del Pokémon seleccionado mediante un clic en la pantalla Pokémon Capturados, en ella podemos ver una imagen del Pokémon, el nombre, el peso, la altura y los tipos a los que pertenece.
+Pantalla donde se nos muestra información detallada del Pokémon seleccionado mediante un clic en la pantalla Pokémon Capturados, en ella podemos ver una imagen del Pokémon, el nombre, el peso, la altura y los tipos a los que pertenece. Para volver a la pantalla de pokemon capturados pulsaremos retroceso.
+![detalles](Imagenes/detalles.png)
  <a id="pokedex"></a>
 ## Pokedex
 Esta pantalla nos muestra un listado de Pokémon donde podremos clicar sobre ellos para indicar que los hemos capturado, marcándose como tal.
 Este listado contiene 150 Pokémon que es el número que hemos  indicado en la programación.
 
 ``Call<PokemonRetrofit> pokemonRetrofitCall = pokemonApi.obtenerListaPokemon(150,0);``
+![pantalla pokedex](Imagenes/pokedex.png)
 <a id=”ajustes”></a>
 ## Ajustes
-En esta pantalla se nos presenta una serie de ajustes e información sobre la aplicación
+En esta pantalla se nos presenta una serie de ajustes e información sobre la aplicación.
+En primer lugar vemos un switch donde podemos elegir entre poder borrar o no los pokemon capturados.
+Debajo tenemos un boton que al pulsarlo nos da información sobre el desarrolador y la version de la app.
+A continuación podemos elegir entre dos idiomas (español e ingles) simplemente pulsando el idioma de nuestra eleccion.
+Y por último tenemos la tecla para cerrar sesión.
+
 
 
 
