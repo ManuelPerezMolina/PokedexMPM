@@ -16,6 +16,8 @@ La descarga de la aplicación se debe realizar a través de la tienda de aplicac
 ## Inicio de la Aplicación
 Como requisito para la utilización de **PokedexMPM** se solicita la identificación, ya sea por correo y contraseña o por Inicio de Sesión de Google, este dato es importante porque se utiliza para el control de Pokémon capturados de un usuario.
 
+<img src="Imagenes/login.png" alt="pantalla inicial, pokemon capturados" width="100" height="200">
+
 
 ## Pantallas
 + [Pokemon Capturados](#capturados)
@@ -27,7 +29,7 @@ Como requisito para la utilización de **PokedexMPM** se solicita la identificac
 ## Pantalla inicial, **Pokémon Capturados**
 Tras iniciar sesión con nuestro usuario se nos presentara la pantalla de **Pokémon capturados**, en ésta podemos ver todos los Pokémon que hemos capturado, y que hemos indicado en la Pantalla [**Pokedex**](#pokedex). Si realizamos un click en cualquier Pokémon se nos abrirá la pantalla de [**Detalles**](#detalles). Si deslizamos cualquier pokemon hacia cualquier lado, se eliminará, siempre que lo hayamos indicado en [**Setting**](#setting).
 
-<img src="Imagenes/login.png" alt="pantalla inicial, pokemon capturados" width="100" height="200">
+<img src="Imagenes/pokemon_capturados.png" alt="pantalla inicial, pokemon capturados" width="100" height="200">
 
  <a id="detalles"></a>
 ### Detalles
