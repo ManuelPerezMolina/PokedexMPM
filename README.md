@@ -57,6 +57,10 @@ Y por último tenemos la tecla para cerrar sesión.
 
 <img src="Imagenes/setting.png" alt="pantalla ajustes" width="100" height="200">
 
+# TECNOLOGIAS UTILIZADAS
+
++ [Firebase Authentication](https://firebase.google.com/docs/auth?hl=es-419)
+
 
 
 
