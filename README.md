@@ -27,7 +27,7 @@ Como requisito para la utilización de **PokedexMPM** se solicita la identificac
   
 <a id="capturados"></a>
 ## Pantalla inicial, **Pokémon Capturados**
-Tras iniciar sesión con nuestro usuario se nos presentara la pantalla de **Pokémon capturados**, en ésta podemos ver todos los Pokémon que hemos capturado, y que hemos indicado en la Pantalla [**Pokedex**](#pokedex). Si realizamos un click en cualquier Pokémon se nos abrirá la pantalla de [**Detalles**](#detalles). Si deslizamos cualquier pokemon hacia cualquier lado, se eliminará, siempre que lo hayamos indicado en [**Setting**](#setting).
+Tras iniciar sesión con nuestro usuario se nos presentara la pantalla de **Pokémon capturados**, en ésta podemos ver todos los Pokémon que hemos capturado, y que hemos indicado en la Pantalla [**Pokedex**](#pokedex). Si realizamos un click en cualquier Pokémon se nos abrirá la pantalla de [**Detalles**](#detalles). Si deslizamos cualquier pokemon hacia cualquier lado, se eliminará, siempre que lo hayamos indicado en [**Ajustes**](#ajustes).
 
 <img src="Imagenes/pokemon_capturados.png" alt="pantalla inicial, pokemon capturados" width="100" height="200">
 
