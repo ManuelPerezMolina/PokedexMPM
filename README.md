@@ -60,12 +60,44 @@ Y por último tenemos la tecla para cerrar sesión.
 # TECNOLOGIAS UTILIZADAS
 
 + [Firebase Authentication](https://firebase.google.com/docs/auth?hl=es-419)
+  ``
+  implementation(libs.firebase.ui.auth)
+  implementation(libs.firebase.auth)
+  ``
 + [Cloud Firestore](https://firebase.google.com/docs/firestore?hl=es-419)
-+ 
+  ``
+  implementation(libs.firebase.firestore)
+  ``
++ [Retrofit](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=es-419#0)
+  ``
+  implementation(libs.retrofit)
+  ``
++ [JsonArray, JsonObjects](https://developer.android.com/reference/org/json/JSONObject)
+  ``
+  implementation(libs.gson)
+    implementation(libs.converter.gson)
+  ``
++ [Glide](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library)
+  ``
+  implementation(libs.converter.gson)
+  ``
++ [Fragment](https://developer.android.com/guide/fragments/create?hl=es-419)
+  ``
+  implementation(libs.fragment)
+  ``
++ [RecyclerView](https://developer.android.com/develop/ui/views/layout/recyclerview?hl=es-419)
+  ``
+  implementation(libs.recyclerview)
+  ``
++ [Google Play service auth](https://developers.google.com/android/guides/client-auth?hl=es-419)
+  ``
+  implementation(libs.play.services.base)
+  ``
 
+  # Clonar Repositorio
+  [Repositorio PokedexMPM](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
+  Seguir los pasos indicados en el docs de github y implementar todas las dependencias indicadas anteriormente.
 
-
-
-
-
-
+  # Conclusion del Desarrollador
+  Ha sido un trabajo complejo, ya que se tiene que gestionar un gran número de tecnologias, Autenticación de Firebase, Base de datos Firebase Firestore, Autenticacion con Google, además de todo la implementación interior, ya sea recyclerview, fragment, gestión json, etc.
+  Si es cierto que viene bastante bien, ya que trabajar con estas tecnologías implementandolas en un mismo trabajo ayuda a ver la interacción y nos plantea un reto para conseguir que convivan sin problemas.
