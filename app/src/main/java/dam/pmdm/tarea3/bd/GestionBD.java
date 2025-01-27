@@ -12,6 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
+import dam.pmdm.tarea3.R;
 import dam.pmdm.tarea3.fragment.Pokedex;
 import dam.pmdm.tarea3.fragment.PokemonCapturados;
 
@@ -36,10 +37,9 @@ public class GestionBD {
         if (fragment instanceof Pokedex){
             db.collection("Capturados").document(nombre).set(pcapturados)
                     .addOnSuccessListener(runnable ->
-                            Toast.makeText(getApplicationContext(), "Pokemon capturado", Toast.LENGTH_SHORT).show())
+                            Toast.makeText(getApplicationContext(), R.string.capturado, Toast.LENGTH_SHORT).show())
                     .addOnFailureListener(runnable ->
-                            Toast.makeText(getApplicationContext(), "Pokemon no capturado", Toast.LENGTH_SHORT).show()
-                    );
+                            Toast.makeText(getApplicationContext(),R.string.sin_capturar, Toast.LENGTH_SHORT).show());
         }
 
         if (fragment instanceof PokemonCapturados){

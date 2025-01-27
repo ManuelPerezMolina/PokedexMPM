@@ -132,7 +132,7 @@ public class PokemonCapturados extends Fragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("Eliminar pokemon");
                 builder.setMessage(R.string.opcion_eliminar);
-                builder.setPositiveButton("Aceptar", null);
+                builder.setPositiveButton(R.string.aceptar,null);
                 builder.show();
             }
 

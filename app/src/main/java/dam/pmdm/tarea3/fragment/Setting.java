@@ -81,7 +81,7 @@ public class Setting extends Fragment {
             builder.setTitle(R.string.acercade);
             builder.setMessage(R.string.msg_acercade);
             builder.setIcon(R.drawable.pokeball);
-            builder.setPositiveButton("Aceptar", null);
+            builder.setPositiveButton(R.string.aceptar, null);
             builder.show();
 
         });
